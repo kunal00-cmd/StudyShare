@@ -1,3 +1,11 @@
+# This repository contains a prebuilt static site (index.html + assets/),
+# so there is no install/build step. Publish the repository root as-is.
 [build]
-  command = "npm run build"
-  publish = "dist"
+  command = "echo 'Prebuilt static site - no build step required'"
+  publish = "."
+
+# Single-page app fallback so client-side routes load on refresh/direct visit.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
